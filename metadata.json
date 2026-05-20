@@ -1,0 +1,6 @@
+{
+  "name": "vaimaisacai",
+  "description": "Premium landing page for vaimaisacai - Açaí reforçado, cremoso e luxuoso em Colina Azul.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

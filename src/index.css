@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #240046;
+  --color-secondary: #3C096C;
+  --color-accent: #FF00C8;
+  --color-accent-neon: #39FF14;
+  --color-lux-purple: #7B2CBF;
+  --color-lux-pink: #FF00C8;
+  --color-surface: #10002B;
+  --color-dark: #10002B;
+  --color-mid: #240046;
+  --color-text-light: #FFFFFF;
+  --color-text-dark: #10002B;
+  --color-muted: #E0AAFF;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-text-light font-sans selection:bg-accent selection:text-white;
+  }
+
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+
+  .glow-neon {
+    box-shadow: 0 0 30px rgba(255, 0, 200, 0.4);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s infinite;
+  }
+
+  .text-neon {
+    text-shadow: 0 0 10px rgba(255, 0, 200, 0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.45); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 122, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
